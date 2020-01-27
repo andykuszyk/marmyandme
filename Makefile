@@ -1,5 +1,9 @@
 build:
 	docker build -t marmyandme .
 
-run: build
-	docker run --name marmyandme -d -p 8080:80 marmyandme
+run:
+	docker-compose down
+	docker-compose up -d --build --force-recreate
+
+watch:
+	find . | grep -v .git | grep -v swp | entr -c make run
