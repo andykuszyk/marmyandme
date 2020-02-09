@@ -4,5 +4,5 @@ branches:
 before_script:
 - docker login -u $dockerhubuser -p $dockerhubpassword docker.io
 script:
-    - docker build -t andykuszyk/marmyandme:$(git log -n 1 --oneline | sed 's/\(.......\).*/\1/') . 
-    - docker push andyuszyk/marmyandme:$(git log -n 1 --oneline | sed 's/\(.......\).*/\1/')
+    - ./build.sh
+    
