@@ -2,11 +2,11 @@ version: "3.3"
 
 services:
     marmyandme:
-        build: .
+        image: andykuszyk/marmyandme:[version]
         ports:
             - 8080:80
         networks:
-            - marmyandme
+            - net 
 
 networks:
-    marmyandme: 
+    net:
