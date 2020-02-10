@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
     marmyandme:
-        image: andykuszyk/marmyandme:[version]
+        build: . 
         ports:
             - 8080:80
         networks:
