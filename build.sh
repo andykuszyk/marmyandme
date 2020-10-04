@@ -2,6 +2,6 @@
 commit=$(git log -n 1 --oneline | sed 's/\(.......\).*/\1/')
 docker build -t andykuszyk/marmyandme:$commit . 
 docker push andykuszyk/marmyandme:$commit
-sed -i "s/build:.*/image: andykuszyk\/marmyandme:$commit/g" docker-compose.yml
-scp -i id_rsa -o "StrictHostKeyChecking no" ./docker-compose.yml $douser@$doip:~/docker-compose.yml
-ssh -i id_rsa -o "StrictHostKeyChecking no" $douser@$doip "docker stack deploy -c ~/docker-compose.yml szyk"
+git clone https://andykuszyk:$GITHUB_TOKEN@github.com/andykuszyk/do-docker
+cd do-docker
+make release-service SERVICE=marmyandme TAG=$commit
