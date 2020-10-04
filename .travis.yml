@@ -5,10 +5,6 @@ before_script:
 - docker login -u $dockerhubuser -p $dockerhubpassword docker.io
 script:
 - "./build.sh"
-before_install:
-- openssl aes-256-cbc -K $encrypted_42ac3787701f_key -iv $encrypted_42ac3787701f_iv
-  -in id_rsa.enc -out id_rsa -d
-- chmod 700 id_rsa
 env:
   global:
     secure: W0Xdy4uv0CPMM9aiCwxpoaF3ctsFABRvnRqCzTKWTNaHlwoMegbhEtifb5dJbdk4Rfz8P1ZZXdi8/2gR4qb5bgW7Y6clOjMQIdYrzXKqEVUEvOMUnTTSu1Lrwd4/4RmD0qAHzaAfxbP7C9hodp3EVBhSRrfos+AaGcprHMTP/bSxIKx1O2uu1rNht2q6o6ilu/iwPNXLfcjyblbWera0pSmvlDzxkxYUjqw8w4Tl6ot8ITWQLvteA9d1wFw+BYfRDLTnrYwWYCkjNETxgtzHR8YYv9Cnh+6jDXJs7rerzDF3iEJ+LeAggFRwzkxRbcqUd8oo5YuNxsjj8TyN4g7a92XAKmhv5o8X7YHXuA6cprSKUh3sBy22dP1syWly+pKqfw5TutQq9ghxHXrs0UsB51RCykKTuGTFf65cyMJcjomMPnqdq9iqA4fwbjpu5vt/k7veEax5obSDqJ3e0PGnS9VuBWlH5+/zAcDs7NMQdNcwocXm8lPaq3aMx3s9mljdVc2I7SBeIANYfpx5DT4RkFPL2/0rP34SqScVrTlI8KYR0o8lbQJeDzaqM4lAgwXkSQ+hdmTwnGOs0owTJebEurn9pYU2cdxxDZbyYo2yPcWiJEiT2+ZFJN1Ts+F8sF9awxc0vdwJ9531/KdJ3M+jjBckgE9HjxVrm+MBAwwd2l4=
